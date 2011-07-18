@@ -1,0 +1,18 @@
+[scala]
+  version: 2.9.0-1
+
+[app]
+  org: example
+  name: hello
+  version: 1.0.1
+  class: example.HelloRunner
+  resources: ./config
+
+[repositories]
+   kt: http://localhost:8081/nexus/content/repositories/releases
+
+[boot]
+ directory: ./lib
+
+[log]
+ level: info
