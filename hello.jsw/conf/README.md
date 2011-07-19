@@ -10,4 +10,4 @@ What you might want to change:
 * wrapper.app.parameter.2 - point to your particular launch file.
 * memory allocation in wrapper.java.initmemory and wrapper.java.maxmemory
 
-I have included 2 launch files. Hello.launch points to a single repo, and all the program's dependencies have to be in it. Hello-more-repos.launch looks in multiple repos that are, in this case, proxied by Nexus. You don't have to worry about pre-loading all the dependencies into the single repo, although that would be better for a production deployment.
+I have included 2 launch files. Hello.launch points to a single repo, and all the program's dependencies have to be in it. Hello-more-repos.launch looks in multiple repos that are, in this case, proxied by Nexus. You wouldn't really want to do this for a production deployment, so you will have control over what is running, but it is there as an example of what you could do.
