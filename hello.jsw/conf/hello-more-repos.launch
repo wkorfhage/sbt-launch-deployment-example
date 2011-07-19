@@ -10,7 +10,7 @@
 
 [repositories]
    kt: http://localhost:8081/nexus/content/repositories/releases
-   m1: http://localhost:8081/nexus/content/shadows/central-m1
+   m: http://localhost:8081/nexus/content/repositories/central
    scala: http://localhost:8081/nexus/content/repositories/scalatools-releases
 
 
