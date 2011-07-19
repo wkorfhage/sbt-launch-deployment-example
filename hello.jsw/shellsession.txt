@@ -1,0 +1,62 @@
+~$ git clone git://github.com/wkorfhage/sbt-launch-deployment-example.git
+Cloning into sbt-launch-deployment-example...
+remote: Counting objects: 58, done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 58 (delta 16), reused 50 (delta 8)
+Receiving objects: 100% (58/58), 829.47 KiB | 1.04 MiB/s, done.
+Resolving deltas: 100% (16/16), done.
+~$ cd sbt-launch-deployment-example/hello.jsw/
+~/sbt-launch-deployment-example/hello.jsw$  wget http://wrapper.tanukisoftware.com/download/3.5.9/wrapper-linux-x86-64-3.5.9.tar.gz
+--2011-07-19 16:04:31--  http://wrapper.tanukisoftware.com/download/3.5.9/wrapper-linux-x86-64-3.5.9.tar.gz
+Resolving wrapper.tanukisoftware.com... 118.22.0.25
+Connecting to wrapper.tanukisoftware.com|118.22.0.25|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 447651 (437K) [application/x-gzip]
+Saving to: “wrapper-linux-x86-64-3.5.9.tar.gz”
+
+100%[===========================================================================================>] 447,651      192K/s   in 2.3s
+
+2011-07-19 16:04:34 (192 KB/s) - “wrapper-linux-x86-64-3.5.9.tar.gz” saved [447651/447651]
+
+~/sbt-launch-deployment-example/hello.jsw$ tar xfz wrapper-linux-x86-64-3.5.9.tar.gz
+~/sbt-launch-deployment-example/hello.jsw$ cp wrapper-linux-x86-64-3.5.9/bin/wrapper bin
+~/sbt-launch-deployment-example/hello.jsw$ cp wrapper-linux-x86-64-3.5.9/lib/libwrapper.so lib
+~/sbt-launch-deployment-example/hello.jsw$ cp wrapper-linux-x86-64-3.5.9/lib/wrapper.jar lib
+~/sbt-launch-deployment-example/hello.jsw$ cd lib
+~/sbt-launch-deployment-example/hello.jsw/lib$ wget http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/0.10.1/sbt-launch.jar
+--2011-07-19 16:06:31--  http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/0.10.1/sbt-launch.jar
+Resolving typesafe.artifactoryonline.com... 50.16.203.43
+Connecting to typesafe.artifactoryonline.com|50.16.203.43|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 937683 (916K) [application/java-archive]
+Saving to: “sbt-launch.jar”
+
+100%[===========================================================================================>] 937,683      841K/s   in 1.1s
+
+2011-07-19 16:06:32 (841 KB/s) - “sbt-launch.jar” saved [937683/937683]
+
+~/sbt-launch-deployment-example/hello.jsw/lib$ cd ..
+~/sbt-launch-deployment-example/hello.jsw$ bin/hello console
+Running Simple Hello, World test deployment...
+wrapper  | --> Wrapper Started as Console
+wrapper  | Java Service Wrapper Community Edition 64-bit 3.5.9
+wrapper  |   Copyright (C) 1999-2011 Tanuki Software, Ltd. All Rights Reserved.
+wrapper  |     http://wrapper.tanukisoftware.com
+wrapper  |
+wrapper  | Launching a JVM...
+jvm 1    | WrapperManager: Initializing...
+jvm 1    | Getting net.java.dev.jna jna 3.2.3 ...
+jvm 1    | :: retrieving :: org.scala-tools.sbt#boot-app
+jvm 1    |      confs: [default]
+jvm 1    |      1 artifacts copied, 0 already retrieved (838kB/9ms)
+jvm 1    | Getting Scala 2.9.0-1 (for hello)...
+jvm 1    | :: retrieving :: org.scala-tools.sbt#boot-scala
+jvm 1    |      confs: [default]
+jvm 1    |      4 artifacts copied, 0 already retrieved (20447kB/19ms)
+jvm 1    | Getting example hello_2.9.0-1 1.0.1 ...
+jvm 1    | :: retrieving :: org.scala-tools.sbt#boot-app
+jvm 1    |      confs: [default]
+jvm 1    |      1 artifacts copied, 0 already retrieved (3kB/4ms)
+jvm 1    | Hello, World!
+wrapper  | <-- Wrapper Stopped
+~/sbt-launch-deployment-example/hello.jsw$
