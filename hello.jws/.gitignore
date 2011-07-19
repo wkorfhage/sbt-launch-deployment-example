@@ -1,0 +1,10 @@
+bin/wrapper
+bin/wrapper.log
+lib/libwrapper.so
+lib/other/
+lib/sbt.boot.lock
+lib/sbt-launch.jar
+lib/scala*
+lib/*log
+lib/wrapper.jar
+logs/
