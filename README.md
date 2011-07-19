@@ -14,6 +14,7 @@ Running the Hello Example
 - cd to hello.project and run sbt. Do a "run" to verify it says "Hello, World", then do a "publish" to push it to the repo.
 - cd to hello.jsw, and run "bin/hello console". The output will look like
 
+```
 	$ bin/hello  console
 	Running Simple Hello, World test deployment...
 	wrapper  | --> Wrapper Started as Console
@@ -37,6 +38,7 @@ Running the Hello Example
 	jvm 1    |      1 artifacts copied, 0 already retrieved (3kB/4ms)
 	jvm 1    | Hello, World!
 	wrapper  | <-- Wrapper Stopped
+```
 
 If you want to just run the program using sbt-launch directly, rather than via JSW, then to hello.sbt-launch. Then run "./launch @hello.launch"
 
