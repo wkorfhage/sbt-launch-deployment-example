@@ -1,3 +1,4 @@
+bin/lib
 bin/wrapper
 bin/wrapper.log
 lib/libwrapper.so
@@ -7,4 +8,4 @@ lib/sbt-launch.jar
 lib/scala*
 lib/*log
 lib/wrapper.jar
-logs/
+logs/*.log
