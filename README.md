@@ -1,10 +1,17 @@
-This code explores using sbt-lauch to automatically download a program and its dependences and run it. The idea for this example is from an [email thread on the sbt mailing list] [1]
+This code explores using sbt-lauch to automatically download a program and its dependences 
+and run it. The idea for this example is from an [email by Ray Racine on this thread on the sbt mailing list] [1]
 
-This project contains
+The idea is that you publish production builds to a repo that also contains your program's
+dependencies. You then use a combination of Java Service Wrapper and sbt-launch to run
+your program. You run Java Service Wrapper, which provides process management facilities, 
+runs sbt-launch, which downloads all the dependencies and runs the program. Ray's emails
+provide more elaboration on the topic.
+
+This project contains everything that we need to build a simple example of the process.
 
 * hello.project - The source code for a simple hello-world project
-* hello.deploy - Where the code is deployed and run. 
-* hello.jsw - A deployment using Java Service Wrapper
+* hello.sbt-launch - An example of running the hello-world program using sbt-launcher.
+* hello.jsw - A deployment using Java Service Wrapper to run sbt-launcher
 
 This assumes there is a local repo for storing jars.
 
@@ -42,6 +49,4 @@ Running the Hello Example
 
 If you want to just run the program using sbt-launch directly, rather than via JSW, then to hello.sbt-launch. Then run "./launch @hello.launch"
 
-[1]: https://groups.google.com/forum/#!msg/simple-build-tool/ofJjd4u31hA/4_JYgFa3ByIJ
-
-
+[1]: https://groups.google.com/d/topic/simple-build-tool/ofJjd4u31hA/discussion
