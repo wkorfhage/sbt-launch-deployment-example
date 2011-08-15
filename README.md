@@ -47,6 +47,6 @@ Running the Hello Example
 	wrapper  | <-- Wrapper Stopped
 ```
 
-If you want to just run the program using sbt-launch directly, rather than via JSW, then to hello.sbt-launch. Then run "./launch @hello.launch"
+If you want to just run the program using sbt-launch directly, rather than via JSW, then cd to hello.sbt-launch and run "./launch @hello.launch"
 
 [1]: https://groups.google.com/d/topic/simple-build-tool/ofJjd4u31hA/discussion
